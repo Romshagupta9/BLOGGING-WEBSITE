@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +6,8 @@
     <title>Blog Home</title>
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Girassol&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Girassol&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="navbar">
@@ -21,27 +19,67 @@
             <a href="#">Contact</a>
         </div>
     </div>
+
     <div class="hero">
-        <h1>Let me capture the beauty of your story.</h1>
-        
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.</p>
+        <!-- Upper Row -->
+        <div class="hero-row">
+            <div class="hero-image">
+                <h3 class="blog-title">Creative Idea</h3>
+                <img src="img1.webp" alt="Image 1">
+                <div class="image-content">
+                    <h3>Creative Idea</h3>
+                    <p>Transform your ideas into something beautiful.</p>
+                </div>
+            </div>
+            <div class="hero-image">
+                <h3 class="blog-title">Artistic Vision</h3>
+                <img src="img2.jpg" alt="Image 2">
+                <div class="image-content">
+                    <h3>Artistic Vision</h3>
+                    <p>See the world through an artistic lens.</p>
+                </div>
+            </div>
+            <div class="hero-image">
+                <h3 class="blog-title">Inspiring Stories</h3>
+                <img src="img3.jpg" alt="Image 3">
+                <div class="image-content">
+                    <h3>Inspiring Stories</h3>
+                    <p>Stories that move and inspire.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lower Row -->
+        <div class="hero-row">
+            <div class="hero-image">
+                <h3 class="blog-title">Jewellery</h3>
+                <img src="img4.jpg" alt="Jewellery">
+                <div class="image-content">
+                    <h3>Jewellery</h3>
+                    <p>Explore the art of elegant jewellery design.</p>
+                </div>
+            </div>
+            <div class="hero-image">
+                <h3 class="blog-title">Fashion</h3>
+                <img src="img5.jpg" alt="Fashion">
+                <div class="image-content">
+                    <h3>Fashion</h3>
+                    <p>Keep up with the latest fashion trends.</p>
+                </div>
+            </div>
+            <div class="hero-image">
+                <h3 class="blog-title">Dance</h3>
+                <img src="img6.jpg" alt="Dance">
+                <div class="image-content">
+                    <h3>Dance</h3>
+                    <p>Move with the rhythm of life.</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="content-box">
-        <h2>Stay inspired. Never stop creating.</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
-    </div>
-    <div class="features">
-        <div class="feature-box" onclick="showMessage('About Section Clicked!')">ABOUT</div>
-        <div class="feature-box" onclick="showMessage('Contact Section Clicked!')">CONTACT</div>
-        <div class="feature-box" onclick="showMessage('Services Section Clicked!')">SERVICES</div>
-    </div>
+
     <div class="footer">
         <p>www.reallygreatsite.com</p>
     </div>
-    <script>
-        function showMessage(message) {
-            alert(message);
-        }
-    </script>
 </body>
 </html>
