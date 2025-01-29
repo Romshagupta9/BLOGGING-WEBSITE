@@ -5,48 +5,213 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blogista</title>
     <link rel="stylesheet" href="Homepage1.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
   </head>
+  <style>
+    body {
+    font-family: poppins;
+    margin: 0;
+    padding: 0;
+    background-color: #e3dac9;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #e3dac9;
+    animation: slideDown 1s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.logo {
+    font-family: "Sofia", sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    margin-left: 30px;
+}
+.nav-links {
+    display: flex;
+    font-size: 20px;
+    gap: 20px;
+}
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.hero1 {
+    text-align: center;
+    padding-top: 70px;
+    background: url('https://source.unsplash.com/1200x600/?nature') no-repeat center/cover;
+    color: black;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 10px;
+}
+.description {
+    flex: 1;
+    max-width: 450px;
+    margin-left: 10px;
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: slideInLeft 1.5s ease-in-out forwards;
+}
+.meow{
+    font-family: "Sofia", sans-serif;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.gallery {
+    display: flex;
+    gap: 0px;
+}
+.gallery img {
+    width: 350px;
+    height: 350px;
+    margin-right: 10px;
+    object-fit: cover;
+    border-radius: 5px;
+    transform: scale(0.8);
+    transition: transform 0.3s ease-in-out;
+}
+.gallery img:hover {
+    transform: scale(1);
+}
+
+.hero img {
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+.hero {
+    padding: 60px 20px;
+}
+
+.hero-row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+    gap: 20px;
+    margin-bottom: 40px; /* Add space between the rows */
+}
+
+.hero-image {
+    position: relative;
+    width: 30%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.hero-image:hover img {
+    transform: scale(1.1); /* Zoom in the image */
+    filter: blur(5px); /* Apply blur effect */
+}
+
+.hero-image .image-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.hero-image:hover .image-content {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(10px); /* Slide up the content */
+}
+
+.hero-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #3e2a26;
+    color: white;
+}
+  </style>
   <body>
     <div class="navbar">
       <div class="logo">Blogista</div>
       <div class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">Articles</a>
-        <a href="#">Contact</a>
-        <button
-          style="
-            background: #4caf50;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-          "
-        >
-          Subscribe
-        </button>
+        <a href="login-cc.html">Home</a>
+        <a href="login-cc.html">Articles</a>
+        <a href="login-cc.html">Contact</a>
+        <a href="login-cc.html" style="text-decoration: none;">
+            <button
+              style="
+                background: #784c25;
+                color: #e3dac9;
+                font-size: 18px;
+                border-radius: 11px;
+                border-color: #784c25;
+                cursor: pointer;
+                margin-right: 30px;
+                padding-right: 20px;
+              "
+            >
+              Sign in
+            </button>
+          </a>
+          
       </div>
     </div>
-
-    <div class="hero">
-      <h1>Welcome to Blogista</h1>
-      <p>Your go-to place for amazing blogs and stories</p>
-    </div>
-
-    <div class="content">
-      <div class="description">
-        <h2>Your Thoughts, Our Website</h2>
-        <p>
-          Dive into thought-provoking articles, personal experiences, and expert
-          opinions. Blogista brings you the latest trends, travel guides,
-          lifestyle tips, and much more.
-        </p>
-      </div>
-      <div class="gallery">
-        <img src="https://source.unsplash.com/200x200/?writing" alt="Writing" />
-        <img src="https://source.unsplash.com/200x200/?books" alt="Books" />
-        <img src="https://source.unsplash.com/200x200/?journal" alt="Journal" />
-      </div>
-    </div>
-    <script src="Homepage1.js"></script>
-  </body>
-</html>
