@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write a Blog</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Girassol&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="blogupload.css">
+    
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Create Your Blog</h1>
+    
+    <form action="/submit-blog" method="POST">
+        <!-- Blog Title -->
+        <div class="form-group form-section">
+            <label for="blogTitle">Blog Title:</label>
+            <input type="text" id="blogTitle" name="blogTitle" required>
+        </div>
+
+        <!-- Blog Genre -->
+        <div class="form-group form-section">
+            <label for="blogGenre">Genre:</label>
+            <select id="blogGenre" name="blogGenre" class="genre-dropdown" required>
+                <option value="Tech">Tech</option>
+                <option value="Lifestyle">Lifestyle</option>
+                <option value="Health">Health</option>
+                <option value="Education">Education</option>
+                <option value="Food">Food</option>
+                <option value="Travel">Travel</option>
+                <option value="Fashion">Fashion</option>
+            </select>
+        </div>
+
+        <!-- Blog Content -->
+        <div class="form-group form-section">
+            <label for="blogContent">Blog Content:</label>
+            <textarea id="blogContent" name="blogContent" required maxlength="5000"></textarea>
+        </div>
+
+        <!-- Hashtags -->
+        <div class="form-group form-section">
+            <label for="hashtags">Hashtags:</label>
+            <div class="hashtag-section">
+                <span class="hashtag" onclick="addHashtag('#Tech')">#Tech</span>
+                <span class="hashtag" onclick="addHashtag('#Lifestyle')">#Lifestyle</span>
+                <span class="hashtag" onclick="addHashtag('#Health')">#Health</span>
+                <span class="hashtag" onclick="addHashtag('#Education')">#Education</span>
+                <span class="hashtag" onclick="addHashtag('#Food')">#Food</span>
+                <span class="hashtag" onclick="addHashtag('#Travel')">#Travel</span>
+                <span class="hashtag" onclick="addHashtag('#Fashion')">#Fashion</span>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group form-section">
+            <button type="submit">Post Blog</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Function to add selected hashtag to the blog content
+    function addHashtag(hashtag) {
+        const blogContent = document.getElementById('blogContent');
+        blogContent.value += ' ' + hashtag;
+    }
+</script>
+
+</body>
+</html>
