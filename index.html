@@ -25,26 +25,26 @@
         <div class="hero-row">
             <div class="hero-image">
                 <h3 class="blog-title">Creative Idea</h3>
-                <img src="img1.webp" alt="Image 1">
+                <img src="img1.webp" alt="Creative Idea">
                 <div class="image-content">
                     <h3>Creative Idea</h3>
-                    <p>Transform your ideas into something beautiful.</p>
+                    <p>Unlock your imagination and transform your ideas into innovative creations. Let your creativity flow and inspire the world.</p>
                 </div>
             </div>
             <div class="hero-image">
                 <h3 class="blog-title">Artistic Vision</h3>
-                <img src="img2.jpg" alt="Image 2">
+                <img src="img2.jpg" alt="Artistic Vision">
                 <div class="image-content">
                     <h3>Artistic Vision</h3>
-                    <p>See the world through an artistic lens.</p>
+                    <p>Art is the way to express emotions, ideas, and perceptions. Explore how different artists bring their unique visions to life.</p>
                 </div>
             </div>
             <div class="hero-image">
                 <h3 class="blog-title">Inspiring Stories</h3>
-                <img src="img3.jpg" alt="Image 3">
+                <img src="img3.jpg" alt="Inspiring Stories">
                 <div class="image-content">
                     <h3>Inspiring Stories</h3>
-                    <p>Stories that move and inspire.</p>
+                    <p>Stories of resilience, hope, and courage that can move hearts and spark change in the world. Be inspired by the journeys of others.</p>
                 </div>
             </div>
         </div>
@@ -53,26 +53,26 @@
         <div class="hero-row">
             <div class="hero-image">
                 <h3 class="blog-title">Jewellery</h3>
-                <img src="img4.jpg" alt="Jewellery">
+                <img src="img5.jpg" alt="Jewellery">
                 <div class="image-content">
                     <h3>Jewellery</h3>
-                    <p>Explore the art of elegant jewellery design.</p>
+                    <p>Delve into the art of jewellery design, from precious metals to sparkling gems. Learn about trends, styles, and the craftsmanship behind each piece.</p>
                 </div>
             </div>
             <div class="hero-image">
                 <h3 class="blog-title">Fashion</h3>
-                <img src="img5.jpg" alt="Fashion">
+                <img src="img6.jpg" alt="Fashion">
                 <div class="image-content">
                     <h3>Fashion</h3>
-                    <p>Keep up with the latest fashion trends.</p>
+                    <p>Fashion is an ever-evolving industry, where style meets expression. Stay updated on the latest trends, designers, and fashion icons.</p>
                 </div>
             </div>
             <div class="hero-image">
                 <h3 class="blog-title">Dance</h3>
-                <img src="img6.jpg" alt="Dance">
+                <img src="img4.jpg" alt="Dance">
                 <div class="image-content">
                     <h3>Dance</h3>
-                    <p>Move with the rhythm of life.</p>
+                    <p>Movement is a form of self-expression. Dive into the world of dance, from classical ballet to modern choreography, and explore its cultural significance.</p>
                 </div>
             </div>
         </div>
@@ -81,5 +81,32 @@
     <div class="footer">
         <p>www.reallygreatsite.com</p>
     </div>
+
+    <!-- Floating Plus Button -->
+    <div class="plus-button" id="plusButton">
+        <span>+</span>
+    </div>
+
+    <!-- Blog Creation Form (Hidden Initially) -->
+    <div class="blog-form" id="blogForm">
+        <form>
+            <h2>Create Your Blog</h2>
+            <label for="title">Blog Title:</label>
+            <input type="text" id="title" name="title" placeholder="Enter Blog Title" required>
+            <label for="content">Blog Content:</label>
+            <textarea id="content" name="content" placeholder="Write your blog content here..." required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript to toggle the blog form visibility
+        const plusButton = document.getElementById('plusButton');
+        const blogForm = document.getElementById('blogForm');
+
+        plusButton.addEventListener('click', function () {
+            blogForm.classList.toggle('visible');
+        });
+    </script>
 </body>
 </html>
