@@ -41,7 +41,7 @@ body {
 
 .nav-links .signup-btn {
     padding: 8px 20px;
-    border: none;
+    border: 5px;
     background-color: #ff6347;
     color: white;
     cursor: pointer;
