@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Blogging Site</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FAF3E0;
+        }
+        
+        /* Container */
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        
+        /* Profile Header */
+        .profile-header {
+            display: flex;
+            align-items: center;
+            background: #FFF5E1;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .profile-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #b5651d;
+            margin-right: 20px;
+        }
+        
+        .profile-info h2, .profile-info p {
+            margin: 5px 0;
+            color: #5a3d2b;
+        }
+
+        .edit-btn {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            background: #b5651d;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* Edit Profile Section */
+        .edit-profile {
+            display: none;
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .edit-profile input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #d3a86e;
+            border-radius: 5px;
+        }
+
+        .edit-profile button {
+            background: #b5651d;
+            color: white;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* New Post Section */
+        .new-post {
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .new-post textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #d3a86e;
+            border-radius: 5px;
+            resize: none;
+        }
+
+        .new-post button {
+            background: #b5651d;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        /* Posts Section */
+        .posts-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .post {
+            background: #fffaf0;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid #b5651d;
+        }
+
+        .post .actions {
+            margin-top: 10px;
+        }
+
+        .post button {
+            background: none;
+            border: none;
+            color: #b5651d;
+            cursor: pointer;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Profile Section -->
+    <div class="profile-header">
+        <img src="https://via.placeholder.com/80" alt="Profile Photo" class="profile-photo" id="profile-photo">
+        <div class="profile-info">
+            <h2 id="profile-name">John Doe</h2>
+            <p>Email: <span id="profile-email">johndoe@example.com</span></p>
+            <p>Bio: <span id="profile-bio">Blogger | Tech Enthusiast</span></p>
+        </div>
+        <button class="edit-btn" onclick="toggleEdit()">Edit Profile</button>
+    </div>
+
+    <!-- Edit Profile Section -->
+    <div class="edit-profile" id="edit-profile">
+        <input type="text" id="edit-name" placeholder="Name">
+        <input type="email" id="edit-email" placeholder="Email">
+        <input type="text" id="edit-bio" placeholder="Bio">
+        <input type="file" id="edit-photo" accept="image/*">
+        <button onclick="saveProfile()">Save</button>
+    </div>
+
+    <!-- Create New Post -->
+    <div class="new-post">
+        <h3>Create a New Post</h3>
+        <textarea id="post-content" rows="3" placeholder="What's on your mind?"></textarea>
+        <button onclick="addPost()">Post</button>
+    </div>
+
+    <!-- User's Posts -->
+    <div class="posts-container">
+        <h3>Your Posts</h3>
+        <div id="posts"></div>
+    </div>
+</div>
+
+<script>
+    // Toggle edit profile section
+    function toggleEdit() {
+        const editSection = document.getElementById("edit-profile");
+        editSection.style.display = editSection.style.display === "none" ? "block" : "none";
+    }
+
+    // Save profile updates
+    function saveProfile() {
+        const name = document.getElementById("edit-name").value.trim();
+        const email = document.getElementById("edit-email").value.trim();
+        const bio = document.getElementById("edit-bio").value.trim();
+        const photo = document.getElementById("edit-photo").files[0];
+
+        if (name) document.getElementById("profile-name").textContent = name;
+        if (email) document.getElementById("profile-email").textContent = email;
+        if (bio) document.getElementById("profile-bio").textContent = bio;
+
+        if (photo) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById("profile-photo").src = e.target.result;
+            };
+            reader.readAsDataURL(photo);
+        }
+
+        toggleEdit();
+    }
+
+    // Function to add a new post
+    function addPost() {
+        const content = document.getElementById("post-content").value.trim();
+        if (content === "") {
+            alert("Post cannot be empty!");
+            return;
+        }
+
+        const posts = JSON.parse(localStorage.getItem("userPosts")) || [];
+        const newPost = { id: Date.now(), content: content };
+        posts.unshift(newPost);
+        localStorage.setItem("userPosts", JSON.stringify(posts));
+
+        document.getElementById("post-content").value = "";
+        loadPosts();
+    }
+
+    // Function to load user's posts
+    function loadPosts() {
+        const postsContainer = document.getElementById("posts");
+        postsContainer.innerHTML = "";
+
+        const posts = JSON.parse(localStorage.getItem("userPosts")) || [];
+
+        if (posts.length === 0) {
+            postsContainer.innerHTML = "<p>No posts yet. Start sharing your thoughts!</p>";
+            return;
+        }
+
+        posts.forEach(post => {
+            const postElement = document.createElement("div");
+            postElement.classList.add("post");
+            postElement.innerHTML = `
+                <p>${post.content}</p>
+                <div class="actions">
+                    <button onclick="editPost(${post.id})">Edit</button>
+                    <button onclick="deletePost(${post.id})">Delete</button>
+                </div>
+            `;
+            postsContainer.appendChild(postElement);
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", loadPosts);
+</script>
+
+</body>
+</html>
