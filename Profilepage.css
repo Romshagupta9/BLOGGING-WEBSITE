@@ -1,0 +1,139 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FAF3E0;
+}
+
+/* Container */
+.container {
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Profile Header */
+.profile-header {
+    display: flex;
+    align-items: center;
+    background: #FFF5E1;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.profile-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #b5651d;
+    margin-right: 20px;
+}
+
+.profile-info h2 {
+    margin: 0;
+    color: #8B4513;
+}
+
+.profile-info p {
+    margin: 5px 0;
+    color: #5a3d2b;
+}
+
+.edit-profile-btn {
+    margin-top: 10px;
+    background: #b5651d;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Edit Profile Section */
+.edit-profile {
+    display: none;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.edit-profile input {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    padding: 8px;
+    border: 1px solid #d3a86e;
+    border-radius: 5px;
+}
+
+/* New Post Section */
+.new-post {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.new-post textarea,
+.new-post input {
+    width: 100%;
+    margin: 5px 0;
+    padding: 8px;
+    border: 1px solid #d3a86e;
+    border-radius: 5px;
+}
+
+.post-btn {
+    background: #b5651d;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+}
+
+/* Posts Section */
+.posts-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.post {
+    background: #fffaf0;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border-left: 4px solid #b5651d;
+}
+
+.post img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.actions {
+    margin-top: 10px;
+}
+
+.actions button {
+    background: none;
+    border: none;
+    color: #b5651d;
+    cursor: pointer;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+}
