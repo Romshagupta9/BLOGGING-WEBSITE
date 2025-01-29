@@ -5,6 +5,12 @@ body {
     background-color: #f7f3ef;
     color: #5a3e36;
 }
+.girassol-regular {
+  font-family: "Girassol", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
